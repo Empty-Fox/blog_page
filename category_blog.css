@@ -409,4 +409,7 @@ a.btn_advertisers:hover {
 .categoryList_column .container_blog_right h2 span {
   font-size: 20px;
 }
+.categoryList_column .container_blog_right .meta-category {
+  margin-top: 1.5rem;
+}
 }
