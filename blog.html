@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="cAsCs8HvwRyvL2Jnz4undLfZ7HxS4nEBtjkWII2J">
+
+    <title>CPARK - Blog</title>
+    <meta name="description"
+        content="We successfully bring together interests of advertisers and publishers by giving them excellent support and strong market expertise to maximize mutual profitability of every deal.">
+    <meta name="keywords"
+        content="CPA, CPL, CPA network, affiliate, affiliate network, perfomance network, digital performance marketplace">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&amp;display=swap">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos%402.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://cpark.pro/css/blocks.css">
+    <link rel="stylesheet" href="https://cpark.pro/css/main.css">
+    <link rel="stylesheet" href="https://cpark.pro/css/blog.css">
+
+    <style>
+        .post-filters {
+            list-style: none;
+            width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin: 0 0 32px;
+            padding: 0;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 1.07px;
+            color: rgba(31, 44, 71, .6);
+            text-transform: uppercase;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .post-filters>li:not(:last-child) {
+            margin-right: 26px;
+        }
+
+        .post-filters .labelTittle {
+            font-weight: 600;
+        }
+
+        .post-filters li a:hover {
+            opacity: .8;
+            text-decoration: none;
+        }
+
+        .post-filters li a {
+            cursor: pointer;
+            color: rgba(31, 44, 71, .6) !important;
+        }
+
+        .row.row1.last_news {
+            padding-top: 15px;
+        }
+
+        .row.row1.last_news img {
+            width: 100%;
+            float: none;
+            margin: 0;
+
+        }
+
+        .meta-category {
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0px;
+            text-transform: none;
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        .meta-category a:first-child {
+            margin-left: 0;
+
+        }
+
+        .meta-category a:hover {
+            opacity: .8;
+            text-decoration: none;
+        }
+
+        .meta-category a {
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.081em;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 1px solid rgba(51, 61, 86, .6);
+            padding: 0 8px;
+            margin: 0 8px 8px 0;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            color: #000;
+        }
+
+        .meta-category a .labelcategory {
+            font-family: Montserrat, sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            color: rgba(30, 41, 69, .9) !important;
+            position: relative;
+            -webkit-box-ordinal-group: 4;
+            -ms-flex-order: 3;
+            order: 3;
+            color: #a8aab2;
+            -webkit-transition: color .15s;
+            transition: color .15s;
+        }
+
+        .entry-more .btn_advertisers {
+            line-height: 45px;
+            margin-top: 3rem !important;
+            float: left;
+        }
+
+
+        .list-wrapper {
+            padding: 15px;
+            overflow: hidden;
+        }
+
+        .list-item {
+            border: 1px solid #EEE;
+            background: #FFF;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px 0px #EEE;
+        }
+
+        .list-item h4 {
+            color: rgba(201, 54, 90, 1);
+            font-size: 18px;
+            margin: 0 0 5px;
+        }
+
+        .list-item p {
+            margin: 0;
+        }
+
+        .simple-pagination ul {
+            margin: 0 0 20px;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .simple-pagination li {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .simple-pagination li a,
+        .simple-pagination li span {
+            color: #666;
+            padding: 5px 10px;
+            text-decoration: none;
+            border: 1px solid #EEE;
+            background-color: #FFF;
+            box-shadow: 0px 0px 10px 0px #EEE;
+        }
+
+        .simple-pagination .current {
+            color: #FFF;
+            background-color: rgb(243, 91, 129);
+            border-color: #FF7182;
+        }
+
+        .simple-pagination .prev.current,
+        .simple-pagination .next.current {
+            background: rgba(201, 54, 90, 1);
+        }
+
+        .pagination_blogs {
+            position: relative;
+            margin: 0;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+
+        .pagination_blogs .list-wrapper {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-right: -20px;
+            margin-left: -20px;
+        }
+
+        .pagination_blogs .list-wrapper .list-item {
+            padding: 40px;
+        }
+
+        .pagination_blogs .column {
+            margin-left: 0;
+        }
+
+        .pagination_blogs .row.row1 img {
+            width: 100%;
+            float: none;
+        }
+
+        .pagination_blogs .row.row1.list-item:hover {
+            transform: scale(1.025);
+            overflow: hidden;
+            box-shadow: 0 0 40px 0 rgb(0 0 0 / 8%);
+            z-index: 1;
+
+        }
+
+        .container_blog {
+            position: relative;
+            width: 100%;
+        }
+
+        .image_blog {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background: linear-gradient(90deg, rgba(67, 32, 108, .85) 21%, rgba(201, 54, 90, .85) 100%);
+        }
+
+        .container_blog:hover .overlay {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .text_blog_overlay {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        a.btn_advertisers:hover {
+            text-decoration: none;
+            font-size: 120%;
+            color: white;
+        }
+
+        .cs-overlay-link {
+            position: absolute;
+            display: block;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .t799__text.t-text.t-text_md {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        @media screen and (max-width: 1250px) {
+            .row.row1.list-item {
+                width: 100%;
+                margin: 0;
+            }
+
+            .pagination_blogs {
+                width: 90%;
+            }
+
+            .column h2 {
+                padding: 0;
+                font-size: 1.5rem;
+            }
+        }
+@media screen and (max-width:1100px) {
+    #rec89437473 .tn-elem[data-elem-id="1550829032280"] {
+      top: 85%;
+    }
+}
+        @media screen and (max-width:850px) {
+            .pagination_blogs .list-wrapper {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+            #rec89437473 .tn-elem[data-elem-id="1550829032280"] {
+    top: 88%;
+}
+        }
+
+        @media screen and (max-width:600px) {
+            .entry-more .btn_advertisers {
+                line-height: 15px;
+                margin-top: 3rem !important;
+                float: left;
+                width: 50%;
+                padding: 1em;
+            }
+
+            .labelTittle {
+                width: 100%;
+                padding-bottom: 6px;
+            }
+
+            .row.rowContant {
+                margin-top: -10px;
+            }
+
+            .pagination_blogs .list-wrapper {
+
+                grid-template-columns: 1fr;
+            }
+
+            .pagination_blogs .list-wrapper .list-item {
+                padding: 20px;
+            }
+
+            .short_text {
+                line-height: 1.5;
+            }
+
+            #blogForm input,
+            .btn_advertisers {
+                width: 100% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div id="nav" class="t456 t456__hidden">
+        <div class="t456__maincontainer">
+            <div class="t456__leftwrapper">
+                <div class="logo">
+                    <a href="https://cpark.pro/index.html" alt="cpark">
+                        <img src="https://cpark.pro/img/1.png">
+                        <img class="rot" src="https://cpark.pro/img/2.png">
+                        <img class="rotBig" src="https://cpark.pro/img/3.png">
+                    </a>
+                </div>
+                <div class="main-header">
+                    <div class="right main-nav nav-with-separator">
+                        <ul id="menu-main_menu">
+                            <li class=""><a href="https://cpark.pro/en">Company</a></li>
+                            <li class=""><a href="https://cpark.pro/en/advertisers">Advertisers</a></li>
+                            <li class=""><a href="https://cpark.pro/en/ublishers">Publishers</a></li>
+                            <li class=""><a href="https://cpark.pro/en/careers">Careers</a></li>
+                            <li class="current-menu-item"><a href="https://cpark.pro/en/blog">Blog</a></li>
+                            <li class=""><a href="https://cpark.pro/en.events">Events</a></li>
+                            <li class="dropdown">
+                                <a style="padding-bottom: 0;" class="dropdown-toggle" data-toggle="dropdown">Account <b
+                                        class="caret"></b></a>
+                                <ul class="dropdown-menu" style="display: none;">
+                                    <li class="sign"><a сlass="sign_a" href="https://my.cpark.pro/v2/sign/in">Sign
+                                            in</a></li>
+                                    <li class="sign"><a сlass="sign_a" href="sign-up.html">Sign up</a></li>
+                                </ul>
+                            </li>
+
+                            <li class=""><a href="contact-us.html">Contact us</a></li>
+
+                            <li class="dropdown"><a
+                                    style="padding-bottom: 0; padding-left: 40px; background-image: none;"
+                                    class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="https://cpark.pro/img/en.png"
+                                        style="width: 30px; margin-left: -30px;  padding-right: 5px;">
+                                    EN
+                                </a>
+                                <b class="caret" style="color: white;"></b>
+                                <ul class="dropdown-menu" style="display: none; margin-left: 20px;">
+                                    <li class="sign sign_a1">
+                                        <a сlass="sign_a" href="https://cpark.pro/ru/blog.html">
+                                            <img src="https://cpark.pro/img/ru.png"
+                                                style="width: 30px; margin-left: -30px; padding-right: 5px; ">
+                                            RU
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a сlass="sign_a" href="#"></a>
+                <div class="burger-menu"><a сlass="sign_a" href="#">
+                    </a><a class="burger-menu_button">
+                        <spun class="burger-menu_lines"></spun>
+                    </a>
+                    <nav class="burger-menu_nav">
+                        <a href="https://cpark.pro/en" class="burger-menu_link ">Company</a>
+                        <a href="https://cpark.pro/en/advertisers" class="burger-menu_link ">Advertisers</a>
+                        <a href="https://cpark.pro/en/publishers" class="burger-menu_link ">Publishers</a>
+                        <a href="https://cpark.pro/en/careers" class="burger-menu_link ">Careers</a>
+                        <a href="https://cpark.pro/en/blog" class="burger-menu_link burger_active">Blog</a>
+                        <a href="https://cpark.pro/en/events" class="burger-menu_link ">Events</a>
+                        <div class="dropbtn" onclick="BurgerDropdownMenu()">Account <div id="myDropdown"
+                                class="dropdown-content">
+                                <a href="https://my.cpark.pro/v2/sign/in">Sign in</a>
+                                <a href="sign-up.html">Sign up</a>
+                            </div>
+                        </div>
+                        <a href="contact-us.html" class="burger-menu_link">Contact us</a>
+                        <div class="dropbtn" onclick="BurgerDropdownMenu1()">
+                            EN
+                            <img src="https://cpark.pro/img/en.png"
+                                style="width: 30px; margin-right: 30px; padding-right: 5px;">
+                            <div id="myDropdown1" class="dropdown-content dropdown-content1">
+                                <a href="https://cpark.pro/ru/blog.html">
+                                    RU
+                                    <img src="https://cpark.pro/img/ru.png"
+                                        style="width: 30px; margin-left: 0px; padding-right: 5px;">
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="rec89437473">
+        <div>
+            <div class="t396__carrier"></div>
+            <div class='t396__elem tn-elem' data-elem-id='1550828884552'>
+                <h1 class='tn-atom'>CPARK News</h1>
+            </div>
+            <div class='t396__elem tn-elem' data-elem-id='1550828980990'>
+                <h2 class='tn-atom'>We regularly publish news and our thoughts about the industry,<br>subscribe to the
+                    newsletter to keep in touch with us</h2>
+                <div id="result_wrong">Please enter a valid email</div>
+                <form action="https://cpark.pro/en/subscribe" method="POST" id="blogForm">
+                    <input type="email" id="email" name="email" placeholder="mail@example.com" required>
+                    <button type="submit" class="btn_advertisers btnBlog">
+                        <span>Subscribe</span></button>
+                </form>
+            </div>
+
+            <div class='t396__elem tn-elem' data-elem-id='1550829032280'>
+                <div class='tn-atom'>By clicking on the button, you consent to the processing of personal data and agree
+                    to the <a href="#" onclick="window.open('policy.html')">Privacy Policy</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class='row'>
+        <ul class="post-filters">
+            <li class="labelTittle">Go to category:</li>
+            <li><a href="#">CPARK News</a></li>
+            <li><a href="#">Industry News</a></li>
+            <li><a href="#">Tips and Guides</a></li>
+        </ul>
+    </div>
+    <div class='row rowContant'>
+
+        <div class="columnBlock">
+            <div class="row row1 last_news" id="blog22">
+                <div class="column column1">
+
+                    <img src="https://cpark.pro/storage/uploads/posts/huuuzHpHahOJknvGVpm8jbyXccp6FxY4jsTjUsas.png">
+
+                    <div class="meta-category">
+                        <a href=""><span class="labelcategory">category.name</span></a>
+                    </div>
+                    <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">How to
+                            Increase Organic Traffic in 2021: Tips for Success</span></h2>
+                    <p style="text-align: left;">
+                        <span style="font-size: 14px;  color: #161616;">
+                            [03.11.2021]</span>
+                    </p>
+                    <br>
+                    <div class="t799__text t-text t-text_md partOfText" style="font-size:16px;">
+                        <p class="short_text">
+                            To get profits from monetization, you must be sure that your site is getting enough organic
+                            traffic. Today, we’re going to show you how it is doing...
+                        </p>
+                    </div>
+                    <div class="entry-more">
+                        <a class="btn_advertisers" href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="columnBlock list-wrapper2">
+            <div class="row row2 list-item2" onclick="window.location.href='#blog22'">
+                <div class="column">
+                    <img src="https://cpark.pro/storage/uploads/posts/huuuzHpHahOJknvGVpm8jbyXccp6FxY4jsTjUsas.png">
+                </div>
+                <div class="column" data-aos="zoom-in-left">
+                    <p>How to Increase Organic Traffic in 2021: Tips for Success</p>
+                    <p style="font-size: 12px;
+                    color: #b7b7b7;">[03.11.2021]</p>
+                </div>
+            </div>
+            <div class="row row2 list-item2" onclick="window.location.href='#blog21'">
+                <div class="column">
+                    <img src="https://cpark.pro/storage/uploads/posts/fkeaWTBJKd2MjBoumel54YN7nunDav9xqd6zDk4d.png">
+                </div>
+                <div class="column" data-aos="zoom-in-left">
+                    <p>Enter the Money Stream with CPARK!</p>
+                    <p style="font-size: 12px;
+                    color: #b7b7b7;">[14.06.2021]</p>
+                </div>
+            </div>
+            <div class="row row2 list-item2" onclick="window.location.href='#blog19'">
+                <div class="column">
+                    <img src="https://cpark.pro/storage/uploads/posts/k4NoSWZLOEOlKFBQsM2G74trSZLPftaaa5aB0rfl.png">
+                </div>
+                <div class="column" data-aos="zoom-in-left">
+                    <p>Running Sweepstakes in 2021</p>
+                    <p style="font-size: 12px;
+                    color: #b7b7b7;">[21.04.2021]</p>
+                </div>
+            </div>
+            <div class="row row2 list-item2" onclick="window.location.href='#blog18'">
+                <div class="column">
+                    <img src="https://cpark.pro/storage/uploads/posts/fkZyYyQlVQoG6L5xauiCoIteoRjHEI0tlR7jSpd2.jpg">
+                </div>
+                <div class="column" data-aos="zoom-in-left">
+                    <p>How much can you earn in affiliate marketing in 2021?</p>
+                    <p style="font-size: 12px;
+                    color: #b7b7b7;">[09.02.2021]</p>
+                </div>
+            </div>
+            <div class="row row2 list-item2" onclick="window.location.href='#blog17'">
+                <div class="column">
+                    <img src="https://cpark.pro/storage/uploads/posts/kJslCzBYxyHIvpuzHwxzbl5nzBnNlgw8kox8zrTS.jpg">
+                </div>
+                <div class="column" data-aos="zoom-in-left">
+                    <p>Aspects You Should Bear in Mind for CPA</p>
+                    <p style="font-size: 12px;
+                    color: #b7b7b7;">[08.09.2020]</p>
+                </div>
+            </div>
+            <div class="row row2 list-item2" onclick="window.location.href='#blog16'">
+                <div class="column">
+                    <img src="https://cpark.pro/storage/uploads/posts/uBXO3x5KWo7Sk9bPYCgyZz4fJ1rH4cdpQUHT2uya.png">
+                </div>
+                <div class="column" data-aos="zoom-in-left">
+                    <p>How about an opportunity to earn some extra income?</p>
+                    <p style="font-size: 12px;
+                    color: #b7b7b7;">[01.07.2020]</p>
+                </div>
+            </div>
+            <div class="row row2 list-item2" onclick="window.location.href='#blog15'">
+                <div class="column">
+                    <img src="https://cpark.pro/storage/uploads/posts/lAydiwKjME1VEuyoBtbOQiBcCMjfeRn5Vv5EGuPf.png">
+                </div>
+                <div class="column" data-aos="zoom-in-left">
+                    <p>How Affiliate Marketing can Help Your Business?</p>
+                    <p style="font-size: 12px;
+                    color: #b7b7b7;">[04.06.2020]</p>
+                </div>
+            </div>
+            <div class="row row2 list-item2" onclick="window.location.href='#blog14'">
+                <div class="column">
+                    <img src="https://cpark.pro/storage/uploads/posts/FbiqwVNvq6rTQ4v86XCo5VItagYjd9DtJtqb6BCf.png">
+                </div>
+                <div class="column" data-aos="zoom-in-left">
+                    <p>Affiliate Marketing Success Story</p>
+                    <p style="font-size: 12px;
+                    color: #b7b7b7;">[19.03.2020]</p>
+                </div>
+            </div>
+            <div class="row row2 list-item2" onclick="window.location.href='#blog13'">
+                <div class="column">
+                    <img src="https://cpark.pro/storage/uploads/posts/LgdOYvprm8tOoWbblOQ3CH8smbriScimWKoT0xc4.jpg">
+                </div>
+                <div class="column" data-aos="zoom-in-left">
+                    <p>A fresh review about us on the most popular RU online affiliate source www.gdetraffic.com</p>
+                    <p style="font-size: 12px;
+                    color: #b7b7b7;">[05.06.2019]</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <div class="pagination_blogs" id="pagtop">
+        <div class="list-wrapper">
+            <div class="row row1 list-item" id="blog21">
+                <div class="column column1">
+
+                    <div class="container_blog">
+                        <img src="img/8.jpg" class="image_blog">
+                        <div class="overlay">
+                            <div class="text_blog_overlay">Read More</div>
+                        </div>
+                        <a href="#" class="cs-overlay-link"></a>
+                    </div>
+
+                    <div class="meta-category">
+                        <a href=""><span class="labelcategory">category.name</span></a>
+                    </div>
+                    <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">Enter the
+                            Money Stream with CPARK!</span></h2>
+                    <p style="text-align: left;">
+                        <span style="font-size: 14px;  color: #161616;">
+                            [14.06.2021]</span>
+                    </p>
+                    <br>
+                    <div class="t799__text t-text t-text_md" style="font-size:16px;">
+                        <p class="short_text">
+                            <span>This summer you can't stay away! Enter the Money Stream with
+                                <strong>CPARK</strong>!</span>
+                            <span>We made it as easy as possible. So, ...</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row1 list-item" id="blog19">
+                <div class="column column1">
+                    <div class="container_blog">
+                        <img src="img/7.jpg" class="image_blog">
+                        <div class="overlay">
+                            <div class="text_blog_overlay">Read More</div>
+                        </div>
+                        <a href="#" class="cs-overlay-link"></a>
+                    </div>
+                    <div class="meta-category">
+                        <a href=""><span class="labelcategory">category.name</span></a>
+                    </div>
+                    <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">Running
+                            Sweepstakes in 2021</span></h2>
+                    <p style="text-align: left;">
+                        <span style="font-size: 14px;  color: #161616;">
+                            [21.04.2021]</span>
+                    </p>
+                    <br>
+                    <div class="t799__text t-text t-text_md" style="font-size:16px;">
+                        <p>
+
+                        <p>Sweepstakes vertical is one of the most interesting verticals in affiliate marketing. It can
+                            help you to start your affiliate journey ...</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row1 list-item" id="blog18">
+                <div class="column column1">
+                    <div class="container_blog">
+                        <img src="img/6.jpg" class="image_blog">
+                        <div class="overlay">
+                            <div class="text_blog_overlay">Read More</div>
+                        </div>
+                        <a href="#" class="cs-overlay-link"></a>
+                    </div>
+                    <div class="meta-category">
+                        <a href=""><span class="labelcategory">category.name</span></a>
+                    </div>
+                    <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">How much can
+                            you earn in affiliate marketing in 2021?</span></h2>
+                    <p style="text-align: left;">
+                        <span style="font-size: 14px;  color: #161616;">
+                            [09.02.2021]</span>
+                    </p>
+                    <br>
+                    <div class="t799__text t-text t-text_md" style="font-size:16px;">
+                        <p class="short_text">
+                            The affiliate marketing industry is growing steadily. However, the key question is, how much
+                            can you really earn in affiliate ...
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row1 list-item" id="blog17">
+                <div class="column column1">
+                    <div class="container_blog">
+                        <img src="img/5.jpg" class="image_blog">
+                        <div class="overlay">
+                            <div class="text_blog_overlay">Read More</div>
+                        </div>
+                        <a href="#" class="cs-overlay-link"></a>
+                    </div>
+                    <div class="meta-category">
+                        <a href=""><span class="labelcategory">category.name</span></a>
+                    </div>
+                    <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">Aspects You
+                            Should Bear in Mind for CPA</span></h2>
+                    <p style="text-align: left;">
+                        <span style="font-size: 14px;  color: #161616;">
+                            [08.09.2020]</span>
+                    </p>
+                    <br>
+                    <div class="t799__text t-text t-text_md" style="font-size:16px;">
+                        <p class="short_text">
+                            You're passionate about social media? Use that to connect to the right people on the right
+                            platform. Whatever you do, just remember:...
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row1 list-item" id="blog16">
+                <div class="column column1">
+                    <div class="container_blog">
+                        <img src="img/4.jpg" class="image_blog">
+                        <div class="overlay">
+                            <div class="text_blog_overlay">Read More</div>
+                        </div>
+                        <a href="#" class="cs-overlay-link"></a>
+                    </div>
+                    <div class="meta-category">
+                        <a href=""><span class="labelcategory">category.name</span></a>
+                    </div>
+                    <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">How about an
+                            opportunity to earn some extra income?</span></h2>
+                    <p style="text-align: left;">
+                        <span style="font-size: 14px;  color: #161616;">
+                            [01.07.2020]</span>
+                    </p>
+                    <br>
+                    <div class="t799__text t-text t-text_md" style="font-size:16px;">
+                        <p class="short_text">
+                            As an affiliate with <strong>CPARK</strong>, you can level up your income by participating
+                            in
+                            this program. We are sure you wouldn't ...
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row1 list-item" id="blog15">
+                <div class="column column1">
+                    <div class="container_blog">
+                        <img src="img/3.jpg" class="image_blog">
+                        <div class="overlay">
+                            <div class="text_blog_overlay">Read More</div>
+                        </div>
+                        <a href="#" class="cs-overlay-link"></a>
+                    </div>
+                    <div class="meta-category">
+                        <a href=""><span class="labelcategory">category.name</span></a>
+                    </div>
+                    <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">How
+                            Affiliate Marketing can Help Your Business?</span></h2>
+                    <p style="text-align: left;">
+                        <span style="font-size: 14px;  color: #161616;">
+                            [04.06.2020]</span>
+                    </p>
+                    <br>
+                    <div class="t799__text t-text t-text_md" style="font-size:16px;">
+                        <p class="short_text">
+                            Business owners have constantly to look for new strategies to increase sales and revenues.
+                            Retaining existing customers is vital, ...
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row1 list-item" id="blog14">
+                <div class="column column1">
+                    <div class="container_blog">
+                        <img src="img/1.jpg" class="image_blog">
+                        <div class="overlay">
+                            <div class="text_blog_overlay">Read More</div>
+                        </div>
+                        <a href="#" class="cs-overlay-link"></a>
+                    </div>
+                    <div class="meta-category">
+                        <a href=""><span class="labelcategory">category.name</span></a>
+                    </div>
+                    <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">Affiliate
+                            Marketing Success Story</span></h2>
+                    <p style="text-align: left;">
+                        <span style="font-size: 14px;  color: #161616;">
+                            [19.03.2020]</span>
+                    </p>
+                    <br>
+                    <div class="t799__text t-text t-text_md" style="font-size:16px;">
+                        <p class="short_text">
+                            It is high time for examples of successful players which have made their mark in affiliate
+                            marketing! These guys were able to earn ...
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row1 list-item" id="blog13">
+                <div class="column column1">
+                    <div class="container_blog">
+                        <img src="img/2.jpg" class="image_blog">
+                        <div class="overlay">
+                            <div class="text_blog_overlay">Read More</div>
+                        </div>
+                        <a href="#" class="cs-overlay-link"></a>
+                    </div>
+                    <div class="meta-category">
+                        <a href=""><span class="labelcategory">category.name</span></a>
+                    </div>
+                    <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">A fresh
+                            review about us on the most popular RU online affiliate source www.gdetraffic.com</span>
+                    </h2>
+                    <p style="text-align: left;">
+                        <span style="font-size: 14px;  color: #161616;">
+                            [05.06.2019]</span>
+                    </p>
+                    <br>
+                    <div class="t799__text t-text t-text_md" style="font-size:16px;">
+                        <p class="short_text">
+                            Social discovery offers are in almost every affiliate network, however, to choose a proper
+                            network from a huge variety is not so easy...
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="pagination-container"></div>
+    </div>
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <div class="t396__artboard t396__artboard1">
+        <div class="t396__elem1">
+            <h3 data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">Follow us<br></h3>
+        </div>
+        <div class="t396__elem2">
+            <div>Add your email there to receive fresh news about the industry</div>
+        </div>
+        <div class="t396__elem3">
+            <div class="tn-atom">By clicking on the button, you consent to the processing of personal data and agree to
+                the <a href="#" onclick="window.open('policy.html')">Privacy Policy</a>.
+            </div>
+        </div>
+        <div class="t396__elem4">
+            <div>
+                <div id="result_wrong2">Please enter a valid email</div>
+                <form action="https://cpark.pro/en/subscribe" method="POST" id="blogForm2">
+                    <input type="email" id="email2" name="email" placeholder="mail@example.com" required>
+                    <button type="submit" class="btn_advertisers btnBlog" id='validate2'>
+                        <span>Subscribe</span></button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div class="t396__elem5">
+            <img src="https://cpark.pro/img/follow-us.png" data-aos="flip-left" data-aos-easing="linear"
+                data-aos-duration="1500">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="rec86235127">
+        <div class='t396'>
+            <div class="t396__artboard">
+                <div class='t396__elem tn-elem tn-elem__862351271470210011265' data-elem-id='1470210011265'>
+                    <div class='tn-atom'>© <span id="year"></span>
+                        All rights reserved. CPARK OU<br />
+                        <a href="mailto:support@cpark.info"
+                            style="color:rgb(19, 3, 12) !important;border-bottom-color: rgb(56, 16, 23);">support@cpark.info</a>
+                    </div>
+                </div>
+
+                <div class="footer_menu">
+                    <div><a href="https://cpark.pro/end41d.html?#rec86235114" style="color:#ffffff !important;">About
+                            us</a></div>
+                    <div><a href="https://cpark.pro/en/advertisers" style="color:#ffffff !important;">Advertisers</a>
+                    </div>
+                    <div><a href="https://cpark.pro/en/publishers" style="color:#ffffff !important;">Publishers</a>
+                    </div>
+                    <div><a href="https://cpark.pro/en/careers" style="color:#ffffff !important;">Careers</a></div>
+                    <div><a href="https://cpark.pro/en/blog" style="color:#ffffff !important;">Blog</a></div>
+                    <div><a href="https://cpark.pro/en/events" style="color:#ffffff !important;">Events</a></div>
+                    <div><a href="https://cpark.pro/en/contact-us" style="color:#ffffff !important;">Contact us</a>
+                    </div>
+                </div>
+
+                <div class='t396__elem tn-elem tn-elem__862351271553189586703' data-elem-id='1553189586703'>
+                    <a class='tn-atom' href="https://www.instagram.com/cpark_agency/" target="_blank">
+                        <img class='tn-atom__img t-img' src='https://cpark.pro/img/instagram1_.png'>
+                    </a>
+                </div>
+
+                <div class='t396__elem tn-elem tn-elem__862351271553189614470' data-elem-id='1553189614470'>
+                    <a class='tn-atom' href="https://www.facebook.com/CPARKagency" target="_blank">
+                        <img class='tn-atom__img t-img' src="https://cpark.pro/img/facebook_.png">
+                    </a>
+                </div>
+
+                <div class='t396__elem tn-elem tn-elem__862351271553189631801' data-elem-id='1553189631801'>
+                    <a class='tn-atom' href="https://www.linkedin.com/company/cpark-agency/" target="_blank">
+                        <img class='tn-atom__img t-img' src="https://cpark.pro/img/linkedin_.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper@7.2.0/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://cpark.pro/js/scriptBlog.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js"></script>
+    <script>
+        // jQuery Plugin: http://flaviusmatis.github.io/simplePagination.js/
+
+        var items = $(".list-wrapper .list-item");
+        var items2 = $(".list-wrapper2 .list-item2");
+
+        var numItems = items.length;
+        var numItems2 = items2.length;
+
+        var perPage = 6;
+
+        items.slice(perPage).hide();
+        items2.slice(perPage).hide();
+
+        $('#pagination-container').pagination({
+            items: numItems,
+            items2: numItems2,
+            itemsOnPage: perPage,
+            prevText: "&laquo;",
+            nextText: "&raquo;",
+            onPageClick: function (pageNumber) {
+                var showFrom = perPage * (pageNumber - 1);
+                var showTo = showFrom + perPage;
+                items.hide().slice(showFrom, showTo).show();
+                items2.hide().slice(showFrom, showTo).show();
+                location.href = "#pagtop";
+            }
+        });
+    </script>
+</body>
+
+
+
+</html>
