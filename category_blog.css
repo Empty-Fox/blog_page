@@ -324,7 +324,7 @@ a.btn_advertisers:hover {
   padding-top: 25vh;
 }
 .categoryList_column .container_blog_right .meta-category {
-  margin-top: 0.5rem;
+  margin-top: 0rem;
 }
 @media screen and (max-width: 1250px) {
   .row.row1.list-item {
