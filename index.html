@@ -23,357 +23,8 @@
     <link rel="stylesheet" href="https://cpark.pro/css/blocks.css">
     <link rel="stylesheet" href="https://cpark.pro/css/main.css">
     <link rel="stylesheet" href="https://cpark.pro/css/blog.css">
+    <link rel="stylesheet" href="category_blog.css">
 
-    <style>
-        .post-filters {
-            list-style: none;
-            width: 100%;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            margin: 0 0 32px;
-            padding: 0;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 1.5;
-            letter-spacing: 1.07px;
-            color: rgba(31, 44, 71, .6);
-            text-transform: uppercase;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-
-        .post-filters>li:not(:last-child) {
-            margin-right: 26px;
-        }
-
-        .post-filters .labelTittle {
-            font-weight: 600;
-        }
-
-        .post-filters li a:hover {
-            opacity: .8;
-            text-decoration: none;
-        }
-
-        .post-filters li a {
-            cursor: pointer;
-            color: rgba(31, 44, 71, .6) !important;
-        }
-
-        .row.row1.last_news {
-            padding-top: 15px;
-        }
-
-        .row.row1.last_news img {
-            width: 100%;
-            float: none;
-            margin: 0;
-
-        }
-
-        .meta-category {
-            font-size: 0.875rem;
-            font-weight: 400;
-            letter-spacing: 0px;
-            text-transform: none;
-            margin-bottom: 0.5rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-
-        .meta-category a:first-child {
-            margin-left: 0;
-
-        }
-
-        .meta-category a:hover {
-            opacity: .8;
-            text-decoration: none;
-        }
-
-        .meta-category a {
-            font-size: 0.875rem;
-            font-weight: 600;
-            letter-spacing: 0.081em;
-            text-transform: uppercase;
-            border-radius: 4px;
-            border: 1px solid rgba(51, 61, 86, .6);
-            padding: 0 8px;
-            margin: 0 8px 8px 0;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            color: #000;
-        }
-
-        .meta-category a .labelcategory {
-            font-family: Montserrat, sans-serif;
-            font-size: 10px;
-            font-weight: 400;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: 1.6;
-            letter-spacing: 1px;
-            color: rgba(30, 41, 69, .9) !important;
-            position: relative;
-            -webkit-box-ordinal-group: 4;
-            -ms-flex-order: 3;
-            order: 3;
-            color: #a8aab2;
-            -webkit-transition: color .15s;
-            transition: color .15s;
-        }
-
-        .entry-more .btn_advertisers {
-            line-height: 45px;
-            margin-top: 3rem !important;
-            float: left;
-        }
-
-
-        .list-wrapper {
-            padding: 15px;
-            overflow: hidden;
-        }
-
-        .list-item {
-            border: 1px solid #EEE;
-            background: #FFF;
-            margin-bottom: 10px;
-            padding: 10px;
-            box-shadow: 0px 0px 10px 0px #EEE;
-        }
-
-        .list-item h4 {
-            color: rgba(201, 54, 90, 1);
-            font-size: 18px;
-            margin: 0 0 5px;
-        }
-
-        .list-item p {
-            margin: 0;
-        }
-
-        .simple-pagination ul {
-            margin: 0 0 20px;
-            padding: 0;
-            list-style: none;
-            text-align: center;
-        }
-
-        .simple-pagination li {
-            display: inline-block;
-            margin-right: 5px;
-        }
-
-        .simple-pagination li a,
-        .simple-pagination li span {
-            color: #666;
-            padding: 5px 10px;
-            text-decoration: none;
-            border: 1px solid #EEE;
-            background-color: #FFF;
-            box-shadow: 0px 0px 10px 0px #EEE;
-        }
-
-        .simple-pagination .current {
-            color: #FFF;
-            background: linear-gradient(90deg, rgba(67,32,108,1) 21%, rgba(201,54,90,1) 100%);
-        }
-
-        .simple-pagination .prev.current,
-        .simple-pagination .next.current {
-            background: linear-gradient( 90deg, rgba(67,32,108,1) 21%, rgba(201,54,90,1) 100%);
-        }
-
-        .pagination_blogs {
-            position: relative;
-            margin: 0;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 20px;
-        }
-
-        .pagination_blogs .list-wrapper {
-
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            margin-right: -20px;
-            margin-left: -20px;
-        }
-
-        .pagination_blogs .list-wrapper .list-item {
-            padding: 40px;
-        }
-
-        .pagination_blogs .column {
-            margin-left: 0;
-        }
-
-        .pagination_blogs .row.row1 img {
-            width: 100%;
-            float: none;
-        }
-
-        .pagination_blogs .row.row1.list-item:hover {
-            transform: scale(1.025);
-            overflow: hidden;
-            box-shadow: 0 0 40px 0 rgb(0 0 0 / 8%);
-            z-index: 1;
-
-        }
-
-        .container_blog {
-            position: relative;
-            width: 100%;
-        }
-
-        .image_blog {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 0;
-            transition: .5s ease;
-            background: linear-gradient(90deg, rgba(67, 32, 108, .85) 21%, rgba(201, 54, 90, .85) 100%);
-        }
-
-        .container_blog:hover .overlay {
-            opacity: 1;
-            cursor: pointer;
-        }
-
-        .text_blog_overlay {
-            color: white;
-            font-size: 20px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-
-        a.btn_advertisers:hover {
-            text-decoration: none;
-            font-size: 120%;
-            color: white;
-        }
-
-        .cs-overlay-link {
-            position: absolute;
-            display: block;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-        }
-
-        .t799__text.t-text.t-text_md {
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-        .title_recom {
-            margin-left: 15px;
-            font-weight: 800;
-            color: rgba(31, 44, 71, .8);
-            font-size: 18px;
-        }
-.row_category {
-    margin-top: 40px;
-}
-.rowContant {
-    margin-top: 0;
-}
-        @media screen and (max-width: 1250px) {
-            .row.row1.list-item {
-                width: 100%;
-                margin: 0;
-            }
-
-            .pagination_blogs {
-                width: 90%;
-            }
-
-            .column h2 {
-                padding: 0;
-                font-size: 1.5rem;
-            }
-        }
-@media screen and (max-width:1100px) {
-    #rec89437473 .tn-elem[data-elem-id="1550829032280"] {
-      top: 85%;
-    }
-}
-        @media screen and (max-width:850px) {
-            .pagination_blogs .list-wrapper {
-
-                grid-template-columns: 1fr 1fr;
-
-            }
-            #rec89437473 .tn-elem[data-elem-id="1550829032280"] {
-    top: 88%;
-}
-        }
-
-        @media screen and (max-width:600px) {
-            .entry-more .btn_advertisers {
-                line-height: 15px;
-                margin-top: 3rem !important;
-                float: left;
-                width: 50%;
-                padding: 1em;
-            }
-
-            .labelTittle {
-                width: 100%;
-                padding-bottom: 6px;
-            }
-
-            .row.rowContant {
-                margin-top: -10px;
-            }
-
-            .pagination_blogs .list-wrapper {
-
-                grid-template-columns: 1fr;
-            }
-
-            .pagination_blogs .list-wrapper .list-item {
-                padding: 20px;
-            }
-
-            .short_text {
-                line-height: 1.5;
-            }
-
-            #blogForm input,
-            .btn_advertisers {
-                width: 100% !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -498,9 +149,9 @@
     <div class='row row_category'>
         <ul class="post-filters">
             <li class="labelTittle">Go to category:</li>
-            <li><a href="#">CPARK News</a></li>
-            <li><a href="#">Industry News</a></li>
-            <li><a href="#">Tips and Guides</a></li>
+            <li><a href="category/cpark_news.html">CPARK News</a></li>
+            <li><a href="category/industry_news.html">Industry News</a></li>
+            <li><a href="category/tipsQuidess.html">Tips and Guides</a></li>
         </ul>
     </div>
     <div class='row rowContant'>
@@ -512,7 +163,7 @@
                     <img src="https://cpark.pro/storage/uploads/posts/huuuzHpHahOJknvGVpm8jbyXccp6FxY4jsTjUsas.png">
 
                     <div class="meta-category">
-                        <a href=""><span class="labelcategory">category.name</span></a>
+                        <a href="category/cpark_news.html"><span class="labelcategory">CPARK NEWS</span></a>
                     </div>
                     <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">How to
                             Increase Organic Traffic in 2021: Tips for Success</span></h2>
@@ -648,7 +299,8 @@
                     </div>
 
                     <div class="meta-category">
-                        <a href=""><span class="labelcategory">category.name</span></a>
+                        <a href="category/cpark_news.html"><span class="labelcategory">CPARK NEWS</span></a>
+                        <a href="category/industry_news.html"><span class="labelcategory">INDUSTRY NEWS</span></a>
                     </div>
                     <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">Enter the
                             Money Stream with CPARK!</span></h2>
@@ -676,7 +328,8 @@
                         <a href="#" class="cs-overlay-link"></a>
                     </div>
                     <div class="meta-category">
-                        <a href=""><span class="labelcategory">category.name</span></a>
+                        <a href="category/cpark_news.html"><span class="labelcategory">CPARK NEWS</span></a>
+                        <a href="category/tipsQuidess.html"><span class="labelcategory">TIPS AND GUIDES</span></a>
                     </div>
                     <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">Running
                             Sweepstakes in 2021</span></h2>
@@ -704,7 +357,7 @@
                         <a href="#" class="cs-overlay-link"></a>
                     </div>
                     <div class="meta-category">
-                        <a href=""><span class="labelcategory">category.name</span></a>
+                        <a href="category/cpark_news.html"><span class="labelcategory">CPARK NEWS</span></a>
                     </div>
                     <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">How much can
                             you earn in affiliate marketing in 2021?</span></h2>
@@ -731,7 +384,8 @@
                         <a href="#" class="cs-overlay-link"></a>
                     </div>
                     <div class="meta-category">
-                        <a href=""><span class="labelcategory">category.name</span></a>
+                        <a href="category/cpark_news.html"><span class="labelcategory">CPARK NEWS</span></a>
+                        <a href="category/industry_news.html"><span class="labelcategory">INDUSTRY NEWS</span></a>
                     </div>
                     <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">Aspects You
                             Should Bear in Mind for CPA</span></h2>
@@ -758,7 +412,8 @@
                         <a href="#" class="cs-overlay-link"></a>
                     </div>
                     <div class="meta-category">
-                        <a href=""><span class="labelcategory">category.name</span></a>
+                        <a href="category/cpark_news.html"><span class="labelcategory">CPARK NEWS</span></a>
+                        <a href="category/tipsQuidess.html"><span class="labelcategory">TIPS AND GUIDES</span></a>
                     </div>
                     <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">How about an
                             opportunity to earn some extra income?</span></h2>
@@ -786,7 +441,8 @@
                         <a href="#" class="cs-overlay-link"></a>
                     </div>
                     <div class="meta-category">
-                        <a href=""><span class="labelcategory">category.name</span></a>
+                        <a href="category/cpark_news.html"><span class="labelcategory">CPARK NEWS</span></a>
+                        <a href="category/industry_news.html"><span class="labelcategory">INDUSTRY NEWS</span></a>
                     </div>
                     <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">How
                             Affiliate Marketing can Help Your Business?</span></h2>
@@ -813,7 +469,7 @@
                         <a href="#" class="cs-overlay-link"></a>
                     </div>
                     <div class="meta-category">
-                        <a href=""><span class="labelcategory">category.name</span></a>
+                        <a href="category/cpark_news.html"><span class="labelcategory">CPARK NEWS</span></a>
                     </div>
                     <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">Affiliate
                             Marketing Success Story</span></h2>
@@ -840,7 +496,9 @@
                         <a href="#" class="cs-overlay-link"></a>
                     </div>
                     <div class="meta-category">
-                        <a href=""><span class="labelcategory">category.name</span></a>
+                        <a href="category/cpark_news.html"><span class="labelcategory">CPARK NEWS</span></a>
+                        <a href="category/industry_news.html"><span class="labelcategory">INDUSTRY NEWS</span></a>
+                        <a href="category/tipsQuidess.html"><span class="labelcategory">TIPS AND GUIDES</span></a>
                     </div>
                     <h2 style="text-align: left;" data-aos="zoom-out-right"><span style="font-weight: 600;">A fresh
                             review about us on the most popular RU online affiliate source www.gdetraffic.com</span>
