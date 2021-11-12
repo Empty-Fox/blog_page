@@ -325,6 +325,18 @@ a.btn_advertisers:hover {
 }
 .categoryList_column .container_blog_right .meta-category {
   margin-top: 0rem;
+
+}
+.blogs_page {
+  float: none !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.blogs_page .row.row1.last_news {
+  padding-top: 0 !important;
+}
+.blogs_page .column {
+  margin-left: 0 !important;
 }
 @media screen and (max-width: 1250px) {
   .row.row1.list-item {
