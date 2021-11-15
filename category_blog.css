@@ -338,6 +338,9 @@ a.btn_advertisers:hover {
 .blogs_page .column {
   margin-left: 0 !important;
 }
+.t456 {
+  height: 130px;
+}
 @media screen and (max-width: 1250px) {
   .row.row1.list-item {
     width: 100%;
@@ -358,6 +361,9 @@ a.btn_advertisers:hover {
   #rec89437473 .tn-elem[data-elem-id="1550829032280"] {
     top: 85%;
   }
+  .row .columnBlock:nth-child(1){
+    width: 70%;
+  }
 }
 
 @media screen and (max-width:850px) {
@@ -373,6 +379,9 @@ a.btn_advertisers:hover {
 }
 
 @media screen and (max-width:600px) {
+  .row .columnBlock:nth-child(1) {
+    width: 100%;
+  }
   .entry-more .btn_advertisers {
     line-height: 15px;
     margin-top: 3rem !important;
