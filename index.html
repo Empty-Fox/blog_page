@@ -188,7 +188,7 @@
 
         <div class="columnBlock list-wrapper2">
             <p class="title_recom">Recommended</p>
-            <div class="row row2 list-item2" onclick="window.location.href='#blog22'">
+            <div class="row row2 list-item2" onclick="window.location.href='blogs/increaseOrganicTraffic.html'">
                 <div class="column">
                     <img src="https://cpark.pro/storage/uploads/posts/huuuzHpHahOJknvGVpm8jbyXccp6FxY4jsTjUsas.png">
                 </div>
@@ -198,7 +198,7 @@
                     color: #b7b7b7;">[03.11.2021]</p>
                 </div>
             </div>
-            <div class="row row2 list-item2" onclick="window.location.href='#blog21'">
+            <div class="row row2 list-item2" onclick="window.location.href='blogs/enter_money.html'">
                 <div class="column">
                     <img src="https://cpark.pro/storage/uploads/posts/fkeaWTBJKd2MjBoumel54YN7nunDav9xqd6zDk4d.png">
                 </div>
@@ -208,7 +208,7 @@
                     color: #b7b7b7;">[14.06.2021]</p>
                 </div>
             </div>
-            <div class="row row2 list-item2" onclick="window.location.href='#blog19'">
+            <div class="row row2 list-item2" onclick="window.location.href='blogs/running_sweepstakes.html'">
                 <div class="column">
                     <img src="https://cpark.pro/storage/uploads/posts/k4NoSWZLOEOlKFBQsM2G74trSZLPftaaa5aB0rfl.png">
                 </div>
@@ -218,7 +218,7 @@
                     color: #b7b7b7;">[21.04.2021]</p>
                 </div>
             </div>
-            <div class="row row2 list-item2" onclick="window.location.href='#blog18'">
+            <div class="row row2 list-item2" onclick="window.location.href='blogs/earn_in_affiliate.html'">
                 <div class="column">
                     <img src="https://cpark.pro/storage/uploads/posts/fkZyYyQlVQoG6L5xauiCoIteoRjHEI0tlR7jSpd2.jpg">
                 </div>
@@ -228,7 +228,7 @@
                     color: #b7b7b7;">[09.02.2021]</p>
                 </div>
             </div>
-            <div class="row row2 list-item2" onclick="window.location.href='#blog17'">
+            <div class="row row2 list-item2" onclick="window.location.href='blogs/in_mind_cpa.html'">
                 <div class="column">
                     <img src="https://cpark.pro/storage/uploads/posts/kJslCzBYxyHIvpuzHwxzbl5nzBnNlgw8kox8zrTS.jpg">
                 </div>
@@ -238,7 +238,7 @@
                     color: #b7b7b7;">[08.09.2020]</p>
                 </div>
             </div>
-            <div class="row row2 list-item2" onclick="window.location.href='#blog16'">
+            <div class="row row2 list-item2" onclick="window.location.href='blogs/earn_extra_income.html'">
                 <div class="column">
                     <img src="https://cpark.pro/storage/uploads/posts/uBXO3x5KWo7Sk9bPYCgyZz4fJ1rH4cdpQUHT2uya.png">
                 </div>
@@ -248,7 +248,7 @@
                     color: #b7b7b7;">[01.07.2020]</p>
                 </div>
             </div>
-            <div class="row row2 list-item2" onclick="window.location.href='#blog15'">
+            <div class="row row2 list-item2" onclick="window.location.href='blogs/help_your_business.html'">
                 <div class="column">
                     <img src="https://cpark.pro/storage/uploads/posts/lAydiwKjME1VEuyoBtbOQiBcCMjfeRn5Vv5EGuPf.png">
                 </div>
@@ -258,7 +258,7 @@
                     color: #b7b7b7;">[04.06.2020]</p>
                 </div>
             </div>
-            <div class="row row2 list-item2" onclick="window.location.href='#blog14'">
+            <div class="row row2 list-item2" onclick="window.location.href='blogs/success_story.html'">
                 <div class="column">
                     <img src="https://cpark.pro/storage/uploads/posts/FbiqwVNvq6rTQ4v86XCo5VItagYjd9DtJtqb6BCf.png">
                 </div>
@@ -268,7 +268,7 @@
                     color: #b7b7b7;">[19.03.2020]</p>
                 </div>
             </div>
-            <div class="row row2 list-item2" onclick="window.location.href='#blog13'">
+            <div class="row row2 list-item2" onclick="window.location.href='blogs/fresh_review.html'">
                 <div class="column">
                     <img src="https://cpark.pro/storage/uploads/posts/LgdOYvprm8tOoWbblOQ3CH8smbriScimWKoT0xc4.jpg">
                 </div>
@@ -283,7 +283,8 @@
 
     </div>
     <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <div class="pagination_blogs" id="pagtop">
+    <div id="pagtop"></div>
+    <div class="pagination_blogs" >
         <div class="list-wrapper">
             <div class="row row1 list-item" id="blog21">
                 <div class="column column1">
@@ -626,14 +627,14 @@
             items2: numItems2,
             itemsOnPage: perPage,
             prevText: "&laquo;",
-            nextText: "&raquo;",
+            nextText: "&raquo;",  
             onPageClick: function (pageNumber) {
                 var showFrom = perPage * (pageNumber - 1);
                 var showTo = showFrom + perPage;
                 items.hide().slice(showFrom, showTo).show();
                 items2.hide().slice(showFrom, showTo).show();
-                location.href = "#pagtop";
-            }
+                 location.href = "#pagtop"; 
+            }           
         });
     </script>
 </body>
